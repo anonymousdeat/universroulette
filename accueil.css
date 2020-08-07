@@ -1,0 +1,162 @@
+body{
+    margin: 0px;
+    background-image: url(casino1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.nom{
+    color: yellow;
+    margin-left: 450px;
+    font-size: 50px;
+}
+.nomStrong{
+    color: white;
+    font-size: 70px;
+}
+
+.logo{
+    height: 150px;
+}
+
+p.subtitle{
+    font-size: 40px;
+    font-weight: 900;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    margin-top: 200px;
+}
+
+.menu{
+    overflow: hidden;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: solid;
+    color: white;
+}
+
+li :hover{
+    background-color: brown;
+}
+
+#header{
+    text-align: center;
+    overflow: hidden;
+    padding: 15px 30px 0 0;
+    height: 20%;
+    width: 90%;
+    margin-bottom: -45px;
+}
+
+#un, #deux{
+    text-align: center;
+    margin-top: -400px;
+}
+#blocun{
+    float: left;
+    margin: 2% 1px 2% 45px;
+    margin-top: 550px;
+    margin-left: 50px;
+    width: 45%;
+    height: 800px;
+    border-radius: 5%;
+    background-color: blueviolet;
+    opacity: 0.8;
+}
+
+.regles{
+    font-style: normal;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.strong{
+    color: white;
+}
+
+h3{
+    font-size: 40px;
+}
+
+#content{
+    width: 100%;
+    display: inline-block;
+    background-image: url(casino.jpg);
+    background-size: contain;
+    margin-top: 385px;
+    margin-bottom: -10px;
+}
+
+.jouer{
+    font-size: 40px;
+}
+
+.roulette0{
+    width: 700px;
+    height: 350px;
+}
+
+.imageJouer{
+    height: 300px;
+}
+
+.citation{
+    float: right;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    margin: 10% 2% 10% 2%;
+    margin-top: 100px;
+}
+form {
+    text-align: center;
+    float: left;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+label {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin:1px 20% 1px 20%;
+    display: block;
+}
+
+#footer{
+    width: 100%;
+    height: 400px;
+    background-image: url(rouletteNoir1.jpg);
+    background-size: cover;
+}
+
+.footercontainer{
+    display: inline-block;
+    width: 100%;
+}
+
+.avis{
+    color: white;
+}
+
+input[type=submit]{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin:5px auto 3px 30px;
+    border-radius: 5px; 
+    width: 100px;
+    margin: 2px 5px 2px 5px;
+    box-shadow: 1px 1px 1px #000000a1;
+    cursor: pointer;
+}
+input, textarea{
+    padding: 15px;
+    border: 1px solid #002B3B;
+    width: 250px;
+    border-radius: 10px
+}
+q{
+    float: right;
+    color: white;
+    font-size: 40px;
+}

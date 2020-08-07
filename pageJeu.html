@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Jeu_De_La_Roulette</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="pageJeu.css">
+    </head>
+
+    <body>
+        <div class="block">
+            <div>
+                <select name="" id="numbers" class="option1">
+                    <option value="numero">Faites un choix !</option>
+                    <option value="40">Pair</option>
+                    <option value="41">Impair</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                </select>
+            </div>
+    
+            <div class="champNumber">
+                <input type="number" name="somme" id="mises" placeholder="Entrez votre mise SVP" class="input"> 
+            </div>
+    
+            <div class="GoButton">
+                <button type="button" class="bouton" id="go">Go</button>
+            </div>
+
+            <div class="paragraphes">
+                <p id="joueur">Votre portefeuille est de 100000</p>
+                <p id="ordi">Le portefeuille de l'ordinateur est de 0</p>
+            </div>
+
+            <div class="aleatoire">
+                <input type="text" placeholder="Nombre aléatoire" id="alea" class="Naleatoire">
+            </div>
+
+            <div>
+
+            </div>
+            
+    
+        </div>
+
+    </body>
+
+</html>
+
+<script>
+
+let porteFeuille_ordi = 0 ;
+
+let valeurPorteFeuille = 100000 ; 
+
+   
+
+
+    go.onclick = function() {
+
+        let mise = document.getElementById("mises").value;
+        
+        let aleatoire = Math.floor(Math.random()*36) ;
+
+        let go = document.getElementById("go") ;
+
+        let miseEnMillier = mise * 1000;
+
+        if(miseEnMillier > valeurPorteFeuille) {
+            alert('La valeur de la mise est supérieure au portefeuille . Veuillez recommencer SVP !');
+            return 1;
+        }
+
+        let selecquete = document.querySelector("select") ;
+
+        let choix = selecquete.options[selecquete.selectedIndex].value ;
+
+
+
+        alea.value = aleatoire ;
+
+
+        if(choix==40) {
+            if(aleatoire%2==0){
+                valeurPorteFeuille = valeurPorteFeuille + (miseEnMillier * 2);
+                porteFeuille_ordi = porteFeuille_ordi ;
+                alert("Vous avez gagne !");
+            }
+            else{
+                valeurPorteFeuille = valeurPorteFeuille - miseEnMillier ;
+                porteFeuille_ordi = porteFeuille_ordi + miseEnMillier ;
+                alert("Vous avez perdu !");
+            }
+        }
+        else if(choix==41) {
+            if(aleatoire%2 != 0) {
+                valeurPorteFeuille = valeurPorteFeuille + (miseEnMillier * 2);
+                porteFeuille_ordi = porteFeuille_ordi ;
+                alert("Vous avez gagne !");
+            }
+            else {
+                valeurPorteFeuille = valeurPorteFeuille - miseEnMillier ;
+                porteFeuille_ordi = porteFeuille_ordi + miseEnMillier ;
+                alert("Vous avez perdu !");
+            }
+        }
+       
+        if (aleatoire == 0) {
+            alert("Vous avez perdu");
+            valeurPorteFeuille = valeurPorteFeuille - miseEnMillier;
+            porteFeuille_ordi = porteFeuille_ordi + miseEnMillier ;
+        }else if (aleatoire === choix) {
+            alert("Vous avez gagne !");
+            valeurPorteFeuille = valeurPorteFeuille + (miseEnMillier * 35) ;
+            porteFeuille_ordi = porteFeuille_ordi ;
+        }else if (choix != 40 && choix != 41 && choix != 0 && choix != aleatoire){
+            valeurPorteFeuille = valeurPorteFeuille - miseEnMillier;
+            porteFeuille_ordi = porteFeuille_ordi + miseEnMillier ;
+            alert("Vous avez perdu !");
+        }
+        document.getElementById("joueur").innerHTML = ('Votre portefeuille contient' +valeurPorteFeuille) ;
+        document.getElementById("ordi").innerHTML = ('Le portefeuille de ordinateur contient' +porteFeuille_ordi) ;
+    }
+
+</script>
